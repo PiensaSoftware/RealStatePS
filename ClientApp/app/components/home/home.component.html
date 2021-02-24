@@ -1,0 +1,150 @@
+<mdb-carousel [isControls]="true" class="carousel slide carousel-fade" [animation]="'fade'">
+    <mdb-carousel-item>
+        <div class="view w-100">
+            <img class="d-block w-100" src="../../../assets/images/banner1.jpg" alt="First slide">
+            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+        <div class="view w-100">
+            <img class="d-block w-100" src="../../../assets/images/banner2.jpg" alt="First slide">
+            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+        <div class="view w-100">
+            <img class="d-block w-100" src="../../../assets/images/banner3.jpg" alt="First slide">
+            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+        <div class="view w-100">
+            <img class="d-block w-100" src="../../../assets/images/banner4.jpg" alt="First slide">
+            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+        <div class="view w-100">
+            <img class="d-block w-100" src="../../../assets/images/banner5.jpg" alt="First slide">
+            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+        <div class="view w-100">
+            <img class="d-block w-100" src="../../../assets/images/banner6.jpg" alt="First slide">
+            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+    <mdb-carousel-item>
+        <div class="view w-100">
+            <img class="d-block w-100" src="../../../assets/images/banner7.jpg" alt="First slide">
+            <div class="mask rgba-black-light waves-light" mdbWavesEffect></div>
+        </div>
+    </mdb-carousel-item>
+</mdb-carousel>
+<h6>Buscar</h6>
+<div class="m-md-3 m-lg-3">
+    <div class="container-fluid search">
+        <!--<form [formGroup]="searchForm" (ngSubmit)="search()">
+            <div class="row search-area justify-content-center">
+                <div class="col-xs-12 col-md-6 col-lg-6 control">
+                    <mat-form-field>
+                        <input matInput placeholder="Ingresa termino a buscar (Ejemplo: Terreno en Venta Quer&eacute;taro.)" formControlName="word" required />
+                        <mat-error *ngIf="f.word?.errors?.required">
+                            Ingrese palabra a buscar (Ejemplo: Terreno en Venta Querétaro.)
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-xs-12 col-md-1 col-lg-1">
+                    <button mat-fab color="warn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>-->
+        <form [formGroup]="searchFilterForm" (ngSubmit)="searchFilter()">
+            <div class="row search-area">
+                <div class="col-md-2 control">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Propiedad</mat-label>
+                        <mat-select placeholder="Tipo de propiedad" formControlName="propertyTypeId">
+                            <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType.value">
+                                {{propertyType.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2 control">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Operaci&oacute;n</mat-label>
+                        <mat-select placeholder="Tipo de operaci&oacute;n" formControlName="propertyOperationId">
+                            <mat-option *ngFor="let propertyOperation of propertyOperations" [value]="propertyOperation.value">
+                                {{propertyOperation.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2 control">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Estado</mat-label>
+                        <mat-select placeholder="Estado" formControlName="state">
+                            <mat-option *ngFor="let state of states" [value]="state.value">
+                                {{state.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-2 control">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Municipio</mat-label>
+                        <input matInput placeholder="Municipio" formControlName="municipality" />
+                    </mat-form-field>
+                </div>
+                <div class="col-md-3 control">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Colonia</mat-label>
+                        <input matInput placeholder="Colonia" formControlName="settlement" />
+                    </mat-form-field>
+                </div>
+                <div class="col-xs-12 col-md-1 col-lg-1">
+                    <button mat-fab color="warn"><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<hr />
+<div class="container">
+    <div class="section-content">
+        <div class="section-title">
+            <h2>{{titleOne}} <span>{{titleTwo}}</span></h2>
+            {{subtitleOne}}
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6" *ngFor="let property of properties">
+                <div class="product-grid4">
+                    <div class="product-image4">
+                        <a class="pointer" (click)="viewProperty(property.id);">
+                            <img class="pic-1" src="{{urlBase}}{{property?.propertyImage[0]?.url}}">
+                            <img class="pic-2" src="{{urlBase}}{{property?.propertyImage[1]?.url}}">
+                        </a>
+                        <ul class="social">
+                            <li><button mat-mini-fab color="warn" (click)="viewProperty(property.id);"><i class="fa fa-eye"></i></button></li>
+                        </ul>
+                        <span class="product-new-label">Destacado</span>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title"><a class="pointer" (click)="viewProperty(property.id);">{{property.title}}</a></h3>
+                        <p>{{property.municipality}}, {{property.state}}.</p>
+                        <div class="price">
+                            {{property.price| currency}}
+                        </div>
+                        <p>
+                            <i class="fas fa-pencil-ruler fa-lg"></i> <span class="detail"> {{property.metersLand}}m<sup>2</sup></span> |
+                            <i class="fas fa-bed fa-lg"></i> <span class="detail"> {{property.bedrooms}}</span> |
+                            <i class="fas fa-bath fa-lg"></i> <span class="detail"> {{property.bathrooms}}</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\RealStatePS.Data.deps.json
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\RealStatePS.Data.dll
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\RealStatePS.Data.pdb
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\RealStatePS.Entity.dll
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\RealStatePS.Entity.pdb
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\Microsoft.Extensions.Identity.Stores.xml
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\bin\Release\netcoreapp2.1\Microsoft.IdentityModel.Tokens.xml
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\obj\Release\netcoreapp2.1\RealStatePS.Data.csprojAssemblyReference.cache
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\obj\Release\netcoreapp2.1\RealStatePS.Data.csproj.CoreCompileInputs.cache
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\obj\Release\netcoreapp2.1\RealStatePS.Data.AssemblyInfoInputs.cache
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\obj\Release\netcoreapp2.1\RealStatePS.Data.AssemblyInfo.cs
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\obj\Release\netcoreapp2.1\RealStatePS.Data.csproj.CopyComplete
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\obj\Release\netcoreapp2.1\RealStatePS.Data.dll
+C:\Users\flame\Source\Workspaces\RealStatePS\RealStatePS\RealStatePS.Data\obj\Release\netcoreapp2.1\RealStatePS.Data.pdb

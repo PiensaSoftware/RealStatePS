@@ -1,0 +1,79 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29102.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealStatePS", "RealStatePS\RealStatePS.csproj", "{E391D1E4-5F8C-4819-BBA5-6155B83A46FA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealStatePS.Data", "RealStatePS.Data\RealStatePS.Data.csproj", "{28A7B440-F35D-4792-A7E5-F5969B7B51BF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealStatePS.Service", "RealStatePS.Service\RealStatePS.Service.csproj", "{302B9BEE-D990-44A3-BF83-63F65AAE6F39}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RealStatePS.Repository", "RealStatePS.Repository\RealStatePS.Repository.csproj", "{3E87A718-12DF-458E-B79C-436444B1BE82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealStatePS.Entity", "RealStatePS.Entity\RealStatePS.Entity.csproj", "{875BA649-8CCA-455C-9415-937DC55A1BC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealStatePS.Service.Contract", "RealStatePS.Service.Contract\RealStatePS.Service.Contract.csproj", "{E1CC438C-5E30-44AF-879E-6F46A1D0037D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E391D1E4-5F8C-4819-BBA5-6155B83A46FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E391D1E4-5F8C-4819-BBA5-6155B83A46FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E391D1E4-5F8C-4819-BBA5-6155B83A46FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E391D1E4-5F8C-4819-BBA5-6155B83A46FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28A7B440-F35D-4792-A7E5-F5969B7B51BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28A7B440-F35D-4792-A7E5-F5969B7B51BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28A7B440-F35D-4792-A7E5-F5969B7B51BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28A7B440-F35D-4792-A7E5-F5969B7B51BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{302B9BEE-D990-44A3-BF83-63F65AAE6F39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{302B9BEE-D990-44A3-BF83-63F65AAE6F39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{302B9BEE-D990-44A3-BF83-63F65AAE6F39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{302B9BEE-D990-44A3-BF83-63F65AAE6F39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E87A718-12DF-458E-B79C-436444B1BE82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E87A718-12DF-458E-B79C-436444B1BE82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E87A718-12DF-458E-B79C-436444B1BE82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E87A718-12DF-458E-B79C-436444B1BE82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{875BA649-8CCA-455C-9415-937DC55A1BC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{875BA649-8CCA-455C-9415-937DC55A1BC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{875BA649-8CCA-455C-9415-937DC55A1BC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{875BA649-8CCA-455C-9415-937DC55A1BC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1CC438C-5E30-44AF-879E-6F46A1D0037D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1CC438C-5E30-44AF-879E-6F46A1D0037D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1CC438C-5E30-44AF-879E-6F46A1D0037D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1CC438C-5E30-44AF-879E-6F46A1D0037D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F6B7518-9219-472F-9E47-5ED60B85654A}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://flamelsoft.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = RealStatePS\\RealStatePS.csproj
+		SccProjectName1 = RealStatePS
+		SccLocalPath1 = RealStatePS
+		SccProjectUniqueName2 = RealStatePS.Data\\RealStatePS.Data.csproj
+		SccProjectName2 = RealStatePS.Data
+		SccLocalPath2 = RealStatePS.Data
+		SccProjectUniqueName3 = RealStatePS.Service\\RealStatePS.Service.csproj
+		SccProjectName3 = RealStatePS.Service
+		SccLocalPath3 = RealStatePS.Service
+		SccProjectUniqueName4 = RealStatePS.Repository\\RealStatePS.Repository.csproj
+		SccProjectName4 = RealStatePS.Repository
+		SccLocalPath4 = RealStatePS.Repository
+		SccProjectUniqueName5 = RealStatePS.Entity\\RealStatePS.Entity.csproj
+		SccProjectName5 = RealStatePS.Entity
+		SccLocalPath5 = RealStatePS.Entity
+		SccProjectUniqueName6 = RealStatePS.Service.Contract\\RealStatePS.Service.Contract.csproj
+		SccProjectName6 = RealStatePS.Service.Contract
+		SccLocalPath6 = RealStatePS.Service.Contract
+	EndGlobalSection
+EndGlobal

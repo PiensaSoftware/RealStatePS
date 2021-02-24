@@ -1,0 +1,393 @@
+﻿
+<div class="page-header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="header-page">
+                    <h1>Editar</h1>
+                    <ul>
+                        <li><a routerLink="/home">Inicio</a> </li>
+                        <li><i class="fas fa-angle-double-right"></i> Editar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="section-content">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="section-title">
+                    <h2>Editar <span>Propiedad</span></h2>
+                    <p>Modifica los datos de tu inmueble.</p>
+                </div>
+            </div>
+        </div>
+        <form [formGroup]="propertyUpdateForm" (ngSubmit)="onUpdateProperty();">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <mat-card class="card">
+                        <mat-card-header>
+                        </mat-card-header>
+                        <mat-card-content>
+                            <div class="row">
+                                <div class="col-md-12 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Ti&iacute;ulo</mat-label>
+                                        <input matInput placeholder="Ingresa T&iacute;tulo" formControlName="title" required>
+                                        <mat-error *ngIf="f.title?.errors?.required">
+                                            T&iacute;tulo es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-12 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Descripci&oacute;n</mat-label>
+                                        <textarea matInput placeholder="Ingresa Descripci&oacute;n" formControlName="description"></textarea>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-9 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Calle</mat-label>
+                                        <input matInput placeholder="Ingresa Calle" formControlName="street" required>
+                                        <mat-error *ngIf="f.street?.errors?.required">
+                                            Calle es requerida
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>N&uacute;mero</mat-label>
+                                        <input matInput placeholder="Ingresa N&uacute;mero" formControlName="number" required>
+                                        <mat-error *ngIf="f.number?.errors?.required">
+                                            N&uacute;mero es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-7 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Colonia</mat-label>
+                                        <input matInput placeholder="Ingresa Colonia" formControlName="settlement" required>
+                                        <mat-error *ngIf="f.settlement?.errors?.required">
+                                            Colonia es requerida
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-5 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Delegaci&oacute;n o municipio</mat-label>
+                                        <input matInput placeholder="Ingresa Delegaci&oacute;n o Municipio" formControlName="municipality" required>
+                                        <mat-error *ngIf="f.municipality?.errors?.required">
+                                            Delegaci&oacute;n o Municipio es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Estado</mat-label>
+                                        <mat-form-field>
+                                            <mat-select placeholder="Selecciona un Estado" formControlName="state" required>
+                                                <mat-option *ngFor="let state of states" [value]="state.value">
+                                                    {{state.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-error *ngIf="f.state?.errors?.required">
+                                            Estado es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Tipo de Inmuebe</mat-label>
+                                        <mat-form-field>
+                                            <mat-select placeholder="Selecciona un Tipo" formControlName="propertyTypeId" required>
+                                                <mat-option *ngFor="let propertyType of propertyTypes" [value]="propertyType.value">
+                                                    {{propertyType.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-error *ngIf="f.type?.errors?.required">
+                                            Tipo de Inmueble es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Tipo de Operaci&oacute;n</mat-label>
+                                        <mat-form-field>
+                                            <mat-select placeholder="Selecciona un Tipo" formControlName="propertyOperationId" required>
+                                                <mat-option *ngFor="let propertyOperation of propertyOperations" [value]="propertyOperation.value">
+                                                    {{propertyOperation.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-error *ngIf="f.operation?.errors?.required">
+                                            Tipo de Operaci&oacute;n es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-3 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Habitaciones</mat-label>
+                                        <mat-form-field>
+                                            <mat-select placeholder="Selecciona Habitaciones" formControlName="bedrooms" required>
+                                                <mat-option *ngFor="let option of options" [value]="option.value">
+                                                    {{option.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-error *ngIf="f.bedrooms?.errors?.required">
+                                            Habitaciones es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Ba&ntilde;os</mat-label>
+                                        <mat-form-field>
+                                            <mat-select placeholder="Selecciona Ba&ntilde;os" formControlName="bathrooms" required>
+                                                <mat-option *ngFor="let option of options" [value]="option.value">
+                                                    {{option.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-error *ngIf="f.bathrooms?.errors?.required">
+                                            Ba&ntilde;os es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Estacionamientos</mat-label>
+                                        <mat-form-field>
+                                            <mat-select placeholder="Selecciona Estacionamientos" formControlName="garage" required>
+                                                <mat-option *ngFor="let option of options" [value]="option.value">
+                                                    {{option.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-error *ngIf="f.garage?.errors?.required">
+                                            Estacionamientos es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Niveles</mat-label>
+                                        <mat-form-field>
+                                            <mat-select placeholder="Selecciona Niveles" formControlName="level" required>
+                                                <mat-option *ngFor="let option of options" [value]="option.value">
+                                                    {{option.viewValue}}
+                                                </mat-option>
+                                            </mat-select>
+                                        </mat-form-field>
+                                        <mat-error *ngIf="f.level?.errors?.required">
+                                            Niveles es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">                            
+                                <div class="col-md-3 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Metros cuadrados</mat-label>
+                                        <input type="number" matInput placeholder="Ingresa Metros Cuadrados" formControlName="metersLand" required>
+                                        <mat-error *ngIf="f.metersLand?.errors?.required">
+                                            Metros cuadrados es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Metros Construidos</mat-label>
+                                        <input type="number" matInput placeholder="Ingresa Metros Construidos" formControlName="metersBuilt" required>
+                                        <mat-error *ngIf="f.metersBuilt?.errors?.required">
+                                            Metros Construidos es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Precio</mat-label>
+                                        <input type="number" matInput placeholder="Ingresa Precio" formControlName="price" required>
+                                        <mat-error *ngIf="f.price?.errors?.required">
+                                            Precio es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Tel&eacute;fono Uno</mat-label>
+                                        <input matInput placeholder="Ingresa Tel&eacute;fono Uno" formControlName="phoneOne" required>
+                                        <mat-error *ngIf="f.phoneOne?.errors?.required">
+                                            Tel&eacute;fono Uno es requerido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Tel&eacute;fono Dos</mat-label>
+                                        <input matInput placeholder="Ingresa Tel&eacute;fono Dos" formControlName="phoneTwo">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Correo electr&oacute;nico</mat-label>
+                                        <input matInput placeholder="Ingresa Correo electr&oacute;nico" formControlName="email" required>
+                                        <mat-error *ngIf="f.email?.errors?.required">
+                                            Correo electr&oacute;nico es requerido
+                                        </mat-error>
+                                        <mat-error *ngIf="f.email?.errors?.email">
+                                            Formato de Correo electr&oacute;nico invalido
+                                        </mat-error>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Sitio Web</mat-label>
+                                        <input matInput placeholder="Ingresa Sitio Web" formControlName="webSite">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4 control">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Empresa</mat-label>
+                                        <input matInput placeholder="Ingresa Empresa" formControlName="company">
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>Cargar Imagenes del Inmueble</p>
+                                    <mat-grid-list [cols]="breakpoint" rowHeight="8:5" (window:resize)="onResize($event)">
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage1" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload1').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload1" (change)="fileChangeEvent($event,1);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage1?.length > 0" mat-mini-fab (click)="removeImage(1);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage2" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload2').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload2" (change)="fileChangeEvent($event,2);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage2?.length > 0" mat-mini-fab (click)="removeImage(2);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage3" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload3').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload3" (change)="fileChangeEvent($event,3);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage3?.length > 0" mat-mini-fab (click)="removeImage(3);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage4" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload4').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload4" (change)="fileChangeEvent($event,4);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage4?.length > 0" mat-mini-fab (click)="removeImage(4);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage5" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload5').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload5" (change)="fileChangeEvent($event,5);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage5?.length > 0" mat-mini-fab (click)="removeImage(5);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage6" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload6').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload6" (change)="fileChangeEvent($event,6);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage6?.length > 0" mat-mini-fab (click)="removeImage(6);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage7" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload7').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload7" (change)="fileChangeEvent($event,7);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage7?.length > 0" mat-mini-fab (click)="removeImage(7);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage8" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload8').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload8" (change)="fileChangeEvent($event,8);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage8?.length > 0" mat-mini-fab (click)="removeImage(8);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage9" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload9').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload9" (change)="fileChangeEvent($event,9);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage9?.length > 0" mat-mini-fab (click)="removeImage(9);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                        <mat-grid-tile>
+                                            <img style="position:absolute;" [src]="croppedImage10" />
+                                            <button mat-mini-fab color="primary" type="button" onclick="document.getElementById('fileToUpload10').click()">
+                                                <i class="fas fa-upload"></i>
+                                            </button>
+                                            <input id="fileToUpload10" (change)="fileChangeEvent($event,10);" type="file" style="display:none;">
+                                            <button *ngIf="croppedImage10?.length > 0" mat-mini-fab (click)="removeImage(10);" color="warn">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </mat-grid-tile>
+                                    </mat-grid-list>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button mat-flat-button class="btn-register btn-form" color="primary" type="submit"><i class="fas fa-pencil-alt"></i> Editar</button>
+                                </div>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

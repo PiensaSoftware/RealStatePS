@@ -1,0 +1,231 @@
+<ngx-spinner bdOpacity=1
+             bdColor="rgba(51,51,51,0.4)"
+             size="medium"
+             color="#FB8C00"
+             type="ball-pulse">
+    <p style="font-size: 30px; color: white">Cargando...</p>
+</ngx-spinner>
+
+<header>
+    <div class="header-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="header-top-left">
+                        <ul>
+                            <li><i class="far fa-envelope" aria-hidden="true"></i> info@onlinepropiedades.com</li>
+                            <li><i class="fab fa-whatsapp" aria-hidden="true"></i> +52 1 442-201-0662</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="header-top-right">
+                        <ul>
+                            <li><a target="_blank" href="https://www.facebook.com/On-Line-Propiedades-2288209791436445"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a target="_blank" href="https://twitter.com/olpropiedades"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                            <li *ngIf="sessionActive">
+                                <button class="btn-profile " mat-icon-button [matMenuTriggerFor]="menu">
+                                    <mat-icon>more_vert</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu">
+                                    <button mat-menu-item routerLink="/profile">
+                                        <mat-icon><i class="fas fa-user-edit"></i></mat-icon>
+                                        <span>Editar Perfil</span>
+                                    </button>
+                                    <button mat-menu-item disabled>
+                                        <mat-icon><i class="fas fa-key"></i></mat-icon>
+                                        <span>Cuenta</span>
+                                    </button>
+                                    <!--<button mat-menu-item>
+                                        <mat-icon>notifications_off</mat-icon>
+                                        <span>Disable alerts</span>
+                                    </button>-->
+                                </mat-menu>
+                            </li>
+                            <li *ngIf="sessionActive" style="color:white;">{{userName}}</li>
+                            <li *ngIf="!sessionActive"><a class="btn-header" mat-button (click)="openLoginDialog()"><span>Iniciar sesi&oacute;n</span></a></li>
+                            <li *ngIf="sessionActive"><a class="btn-header" mat-button (click)="closeSession()"><span>Salir</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-header-area" id="sticky">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                    <div class="logo-area">
+                        <a href="index.html">
+                            <img src="../assets/images/logo.png" alt="logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    <div class="main-menu">
+                        <nav>
+                            <ul>
+                                <li>
+                                    <a routerLink="/home">
+                                        Inicio
+                                    </a>
+                                </li>
+                                <li *ngIf="sessionActive">
+                                    <a routerLink="/property">
+                                        Mis Propiedades
+                                    </a>
+                                </li>
+                                <li *ngIf="viewUsers && sessionActive">
+                                    <a routerLink="/user">
+                                       Usuarios
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <button *ngIf="!sessionActive" mat-flat-button class="btn-register" color="primary" routerLink="/register"><i class="fas fa-upload"></i> Publica tu propiedad</button>
+                    <button *ngIf="sessionActive" mat-flat-button class="btn-register" color="primary" routerLink="/publish"><i class="fas fa-upload"></i> Publica tu propiedad</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile-menu-area start -->
+    <div class="mobile-menu-area">
+        <div class="container acurate">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="mobile-menu">
+                        <nav id="dropdown">
+                            <ul>
+                                <li>
+                                    <a routerLink="/home">
+                                        Inicio
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile-menu-area end -->
+</header>
+<router-outlet (activate)="onActivate($event)">
+</router-outlet>
+<div class="subscribe-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="subscribe-text">
+                    <h3>SUSCR&Iacute;BETE Y RECIBE NOTICIAS</h3>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                <div class="newsletter wow fadeInRight" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInRight;">
+                    <form>
+                        <label><i class="fa fa-envelope-o" aria-hidden="true"></i></label>
+                        <input placeholder="correo@dominio.com" />
+                        <button (click)="subscribe();">Subscribir</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+  (adsbygoogle = window.adsbygoogle || []).push({
+
+    google_ad_client: "ca-pub-3694007203846365",
+
+    enable_page_level_ads: true
+
+  });
+
+</script>
+<footer>
+    <div id="footer" class="footer-top-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="footer-heading">
+                        <a href="index.html"><img src="../assets/images/logo.png" alt=""></a>
+                        <div class="footer-social-icons">
+                            <ul>
+                                <li><a href="https://www.facebook.com/On-Line-Propiedades-2288209791436445"><i class="fab fa-facebook"></i></a></li>
+                                <li><a href="https://twitter.com/olpropiedades"><i class="fab fa-twitter"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="footer-heading">
+                        <h2>Otras P&aacute;ginas</h2>
+                        <div class="footer-two">
+                            <nav>
+                                <ul>
+                                    <li><a routerLink="/privacity"><i class="fa fa-angle-right" aria-hidden="true"></i>Aviso de privacidad</a></li>
+                                    <li><a routerLink="/terms"><i class="fa fa-angle-right" aria-hidden="true"></i>Terminos y condiciones</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="footer-heading heading-margin">
+                        <h2>Propiedades Recientes</h2>
+                        <div class="sweet-home">
+                            <div class="media">
+                                <a class="pull-left pointer" (click)="viewProperty(properties[1]?.id);">
+                                    <img class="property-recent" src="{{urlBase}}{{properties[0]?.propertyImage[0].url}}" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                    <a class="pointer" (click)="viewProperty(properties[1]?.id);">{{properties[0]?.title}}</a>
+                                    </h4>
+                                    <p>{{properties[0]?.price| currency}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sweet-home sweet-home-margin">
+                            <div class="media">
+                                <a class="pull-left pointer" (click)="viewProperty(properties[1]?.id);">
+                                    <img class="property-recent" src="{{urlBase}}{{properties[1]?.propertyImage[0].url}}" alt="">
+                                </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">
+                                    <a class="pointer" (click)="viewProperty(properties[1]?.id);">{{properties[1]?.title}}</a>
+                                    </h4>
+                                    <p>{{properties[1]?.price| currency}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                    <div class="footer-heading">
+                        <h2>Contacto</h2>
+                        <p class="footer-border-bottom"><i class="fab fa-whatsapp" aria-hidden="true"></i> +52 1 442-201-0662</p>
+                        <p class="footer-border-bottom"><i class="far fa-envelope" aria-hidden="true"></i> info@onlinepropiedades.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="footer-bottom-left">
+                        <p>&copy; 2018 Online Propiedades, Todos los derechos reservados | Powered by Piensa Software</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

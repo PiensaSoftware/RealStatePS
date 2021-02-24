@@ -1,0 +1,20 @@
+﻿<div class="row">
+    <div class="col-md-12">
+        <form [formGroup]="sendDetailForm">
+            <mat-form-field appearance="outline">
+                <mat-label>Correo electr&oacute;nico</mat-label>
+                <input matInput placeholder="Ingresa Correo Electr&oacute;nico" formControlName="email" required>
+                <button mat-flat-button color="primary" matSuffix mat-stroked-button aria-label="search" (click)="shareDetail();">
+                    <mat-icon>send</mat-icon>
+                </button>
+
+                <mat-error *ngIf="f.email?.errors?.required">
+                    Correo electr&oacute;nico es requerido
+                </mat-error>
+                <mat-error *ngIf="f.email?.errors?.email">
+                    Formato de Correo electr&oacute;nico invalido
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+</div>

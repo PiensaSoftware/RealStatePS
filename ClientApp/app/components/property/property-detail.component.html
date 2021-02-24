@@ -1,0 +1,135 @@
+
+<div class="page-header-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                <div class="header-page">
+                    <h1>Detalle</h1>
+                    <ul>
+                        <li><a routerLink="/home">Inicio</a> </li>
+                        <li><i class="fas fa-angle-double-right"></i> Detalle de propiedad</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="section-title">
+                    <h2>Detalle <span>de Propiedad</span></h2>
+                    <p>Aqui encontraras los datos de contacto y mas especificaciones sobre el inmueble.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <mat-card class="card">
+                    <mat-card-header>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <div class="row">
+                            <aside class="col-sm-6 border-right">
+                                <article class="gallery-wrap">
+                                    <div class="img-big-wrap">
+                                        <div><img src="{{imageView}}"></div>
+                                    </div>
+                                    <div class="img-small-wrap">
+                                        <div *ngFor="let image of property?.propertyImage" (click)="imageView = image.url" class="item-gallery">
+                                            <img src="{{image.url}}">
+                                        </div>
+                                    </div>
+                                </article>
+                            </aside>
+                            <aside class="col-sm-6">
+                                <article class="card-body p-4">
+                                    <h3 class="title mb-3">{{property?.title}}</h3>
+                                    <p class="price-detail-wrap">
+                                        <span class="price h3 text-warning">
+                                            <span class="currency">MXN </span><span class="num">{{property?.price | currency}}</span>
+                                        </span>
+                                    </p> <!-- price-detail-wrap .// -->
+                                    <dl class="param param-feature garanty">
+                                        <dt>Descripci&oacute;n</dt>
+                                        <dd>
+                                            {{property?.description}}
+                                        </dd>
+                                    </dl>
+                                    <dl class="param param-feature garanty">
+                                        <dt>Direcci&oacute;n</dt>
+                                        <dd>
+                                            <strong>Calle:</strong> {{property?.street}} {{property?.number}}
+                                            <strong>, Colonia:</strong> {{property?.settlement}}
+                                            <strong>, Municipio o delegaci&oacute;n:</strong> {{property?.municipality}}
+                                            <strong>, Estado:</strong> {{property?.state}}
+                                        </dd>
+                                    </dl>
+
+                                    <dl class="param param-feature garanty">
+                                        <dt>Detalles</dt>
+                                        <mat-chip-list>
+                                            <mat-chip *ngIf="property?.metersLand > 0" color="primary" selected>Metros: {{property?.metersLand}} m<sup>2</sup></mat-chip>
+                                            <mat-chip *ngIf="property?.metersBuilt > 0" color="primary" selected>Construcci&oacute;n: {{property?.metersBuilt}} m<sup>2</sup></mat-chip>
+                                            <mat-chip *ngIf="property?.level > 0" color="primary" selected>Niveles: {{property?.level}}</mat-chip>
+                                            <mat-chip *ngIf="property?.bedrooms > 0" color="primary" selected>Habitaciones: {{property?.bedrooms}}</mat-chip>
+                                            <mat-chip *ngIf="property?.bathrooms > 0" color="primary" selected>Ba&ntilde;os: {{property?.bathrooms}}</mat-chip>
+                                            <mat-chip *ngIf="property?.garage > 0" color="primary" selected>Estacionamiento: {{property?.garage}}</mat-chip>
+                                        </mat-chip-list>
+                                    </dl>
+
+                                    <dl class="param param-feature garanty">
+                                        <dt>Contacto</dt>
+                                        <dd>
+                                            <strong><span class="far fa-envelope"></span></strong> {{property?.email}}
+                                        </dd>
+                                        <dd>
+                                            <strong><span class="fas fa-phone"></span></strong> {{property?.phoneOne}}
+                                        </dd>
+                                        <dd *ngIf="property?.phoneTwo !=''">
+                                            <strong><span class="fas fa-phone"></span></strong> {{property?.phoneTwo}}
+                                        </dd>
+                                    </dl>
+                                    <dl class="param param-feature garanty">
+                                        <dd>
+                                            <div class="row">
+                                                <div class="col-md-5">
+                                                    <button mat-flat-button color="primary" (click)="downloadDetail();"><i class="fas fa-file-download"></i> Descargar Ficha</button>
+                                                </div>
+                                                <div class="col-md-7">
+                                                    <button *ngIf="!showSend" mat-flat-button color="primary" (click)="showSend = !showSend;"><i class="fas fa-envelope"></i> Enviar Ficha</button>
+                                                    <div *ngIf="showSend" class="row">
+                                                        <div class="col-md-12">
+                                                            <form [formGroup]="sendDetailForm">
+                                                                <mat-form-field appearance="outline">
+                                                                    <mat-label>Correo electr&oacute;nico</mat-label>
+                                                                    <input matInput placeholder="Ingresa Correo Electr&oacute;nico" formControlName="email" required>
+                                                                    <button mat-flat-button color="primary" matSuffix mat-stroked-button aria-label="search" (click)="sendDetail();">
+                                                                        <mat-icon>send</mat-icon>
+                                                                    </button>
+
+                                                                    <mat-error *ngIf="f.email?.errors?.required">
+                                                                        Correo electr&oacute;nico es requerido
+                                                                    </mat-error>
+                                                                    <mat-error *ngIf="f.email?.errors?.email">
+                                                                        Formato de Correo electr&oacute;nico invalido
+                                                                    </mat-error>
+                                                                </mat-form-field>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </dd>
+                                    </dl>
+                                </article>
+                            </aside>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+﻿<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div *ngIf="isLogin" class="section-title">
+            <h2>Iniciar <span>Sesi&oacute;n</span></h2>
+            <p>Ingresa tus datos de acceso para iniciar sesi&oacute;n.</p>
+        </div>
+        <div *ngIf="!isLogin" class="section-title">
+            <h2>Recuperar <span>Contraseña</span></h2>
+            <p>Ingresa tu correo eléctronico, se te enviaran instrucciones para recuperar tu contraseña.</p>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <mat-card class="card">
+            <mat-card-header>
+            </mat-card-header>
+            <mat-card-content>
+                <form *ngIf="isLogin" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <div class="row">
+                        <div class="col-md-12 control">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Correo electrónico</mat-label>
+                                <input matInput placeholder="Ingresa Correo Electrónico" formControlName="email" required>
+                                <mat-icon matSuffix><i class="fas fa-user"></i></mat-icon>
+                                <mat-error *ngIf="f.email?.errors?.required">
+                                    Correo electrónico es requerido
+                                </mat-error>
+                                <mat-error *ngIf="f.email?.errors?.email">
+                                    Formato de Correo electrónico invalido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 control">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Contraseña</mat-label>
+                                <input matInput placeholder="Ingresa Contraseña" type="password" formControlName="password" required>
+                                <mat-icon matSuffix><i class="fas fa-key"></i></mat-icon>
+                                <mat-error *ngIf="f.password?.errors?.required">
+                                    Contraseña es requerida
+                                </mat-error>
+                                <mat-error *ngIf="f.password?.hasError('minlength')">
+                                    La contraseña debe ser mayor o igual a 6 caracteres
+                                </mat-error>
+                                <mat-error *ngIf="f.password?.hasError('maxLength')">
+                                    La contraseña debe ser menor o igual a 50 caracteres
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button mat-flat-button class="btn-register btn-form" color="primary" type="submit"><i class="fas fa-share-square"></i> Entrar</button>
+                        </div>
+                    </div>
+                </form>
+                <form *ngIf="!isLogin" [formGroup]="passwordRecoverForm" (ngSubmit)="onRecover()">
+                    <div class="row">
+                        <div class="col-md-12 control">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Correo electrónico</mat-label>
+                                <input matInput placeholder="Ingresa Correo Electrónico" formControlName="email" required>
+                                <mat-icon matSuffix><i class="fas fa-user"></i></mat-icon>
+                                <mat-error *ngIf="f.email?.errors?.required">
+                                    Correo electrónico es requerido
+                                </mat-error>
+                                <mat-error *ngIf="f.email?.errors?.email">
+                                    Formato de Correo electrónico invalido
+                                </mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <button mat-flat-button class="btn-register btn-form" color="primary" type="submit"><i class="fas fa-share-square"></i> Recuperar</button>
+                        </div>
+                    </div>
+                </form>
+                <button *ngIf="isLogin" mat-button color="primary" (click)="isLogin=false">Recuperar Contraseña</button>
+                <button mat-button color="primary" (click)="onNoClick();" routerLink="/register">Registrarse</button>
+                <button *ngIf="!isLogin" mat-button color="primary" (click)="isLogin=true">Iniciar Sesión</button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

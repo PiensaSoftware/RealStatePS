@@ -1,0 +1,31 @@
+﻿export class Property {
+    Id: number;
+    UserProfileId: number;
+    Title: string;
+    Description: string;
+    Street: string;
+    Number: string;
+    Settlement: string;
+    Municipality: string;
+    State: string;
+    MetersLand: any;
+    MetersBuilt: number;
+    Bedrooms: number;
+    Bathrooms: number;
+    Garage: number;
+    Level: number;
+    Price: number;
+    Email: string;
+    PhoneOne: string;
+    PhoneTwo: string;
+    WebSite: string;
+    VideoLink: string;
+    PropertyOperationId: number;
+    PropertyTypeId: number;
+    IsActive: boolean;
+    Creator: string;
+    Created: string;
+    Modifier: string;
+    Modified: string;
+    PropertyImage: any;
+}

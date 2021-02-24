@@ -1,0 +1,15 @@
+﻿<h3 mat-dialog-title>Cortar Imagen</h3>
+<mat-dialog-content>
+    <image-cropper [imageChangedEvent]="imageChangedEvent"
+                   [maintainAspectRatio]="true"
+                   [aspectRatio]="ratio"
+                   [resizeToWidth]="size"
+                   format="jpg"
+                   imageQuality="10"
+                   (imageCropped)="imageCropped($event)"
+                   (imageLoaded)="imageLoaded()"></image-cropper>
+    <!--(loadImageFailed)="loadImageFailed()"-->
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-flat-button (click)="onNoClick();" color="primary">Cortar</button>
+</mat-dialog-actions>

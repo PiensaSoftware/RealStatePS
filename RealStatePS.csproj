@@ -1,0 +1,105 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <Authors>Edgar Torres</Authors>
+    <Version>1.0.1</Version>
+    <Company>Angular6NETCore2v3</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\app\app.global.ts" />
+    <None Remove="ClientApp\app\app.route.ts" />
+    <None Remove="ClientApp\app\components\home\login.component.ts" />
+    <None Remove="ClientApp\app\components\legal\privacity.component.ts" />
+    <None Remove="ClientApp\app\components\legal\terms.component.ts" />
+    <None Remove="ClientApp\app\components\publish\publish.component.ts" />
+    <None Remove="ClientApp\app\components\shared\account-activate.component.ts" />
+    <None Remove="ClientApp\app\components\shared\cut-image.component.ts" />
+    <None Remove="ClientApp\app\components\shared\password-change.component.ts" />
+    <None Remove="ClientApp\app\components\shared\property-update.component.ts" />
+    <None Remove="ClientApp\app\components\shared\send-property.component.ts" />
+    <None Remove="ClientApp\app\components\shared\welcome.component.ts" />
+    <None Remove="ClientApp\app\helpers\jwt.interceptor.ts" />
+    <None Remove="ClientApp\app\helpers\MyErrorStateMatcher.ts" />
+    <None Remove="ClientApp\app\model\cropImage.model.ts" />
+    <None Remove="ClientApp\app\model\currentUser.model.ts" />
+    <None Remove="ClientApp\app\model\login.model.ts" />
+    <None Remove="ClientApp\app\model\property.model.ts" />
+    <None Remove="ClientApp\app\model\selectOption.model.ts" />
+    <None Remove="ClientApp\app\model\user.model.ts" />
+    <None Remove="ClientApp\app\service\login.service.ts" />
+    <None Remove="ClientApp\app\service\property.service.ts" />
+    <None Remove="ClientApp\app\service\propertyDetail.service.ts" />
+    <None Remove="ClientApp\app\service\propertyOperation.service.ts" />
+    <None Remove="ClientApp\app\service\propertyType.service.ts" />
+    <None Remove="ClientApp\app\service\register.service.ts" />
+    <None Remove="ClientApp\app\service\toaster.service.ts" />
+    <None Remove="ClientApp\app\service\user.service.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\app\components\account\" />
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="2.1.6" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="5.3.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="3.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="3.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="3.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="4.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RealStatePS.Data\RealStatePS.Data.csproj" />
+    <ProjectReference Include="..\RealStatePS.Entity\RealStatePS.Entity.csproj" />
+    <ProjectReference Include="..\RealStatePS.Service\RealStatePS.Service.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\app\app.global.ts" />
+    <TypeScriptCompile Include="ClientApp\app\app.route.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\legal\privacity.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\legal\terms.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\publish\publish.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\password-change.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\account-activate.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\cut-image.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\login.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\property\property-update.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\register.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\send-property.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\welcome.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\helpers\jwt.interceptor.ts" />
+    <TypeScriptCompile Include="ClientApp\app\helpers\myErrorStateMatcher.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\cropImage.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\currentUser.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\login.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\property.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\selectOption.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\model\user.model.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\login.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\propertyDetail.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\propertyOperation.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\propertyType.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\property.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\register.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\toaster.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\service\user.service.ts" />
+  </ItemGroup>
+
+</Project>
